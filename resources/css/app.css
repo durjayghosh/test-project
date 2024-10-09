@@ -1,0 +1,7 @@
+	  @media only screen and (min-width: 275px) and (max-width: 1024px){
+.header-phone {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  text-align: center;
+	  }}
