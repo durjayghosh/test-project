@@ -29,6 +29,8 @@ use App\Http\Controllers\Frontend\{BehindTheBrandController as FrontendBehindThe
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\AdminBlogController;
+use App\Http\Controllers\CustomLinkController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -84,6 +86,7 @@ Route::prefix('admin')->name('admin.')->middleware(['web'])->group(function () {
 
             Route::resource('blog-category',BlogCategoryController::class);
             Route::resource('blogs', AdminBlogController::class);
+            Route::resource('custom-link', CustomLinkController::class);
 
 
 

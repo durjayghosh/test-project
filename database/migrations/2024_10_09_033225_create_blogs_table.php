@@ -29,6 +29,9 @@ class CreateBlogsTable extends Migration
             $table->longText('seo_description')->nullable();
             $table->longText('seo_tags')->nullable();
             $table->longText('seo_keywords')->nullable();
+            //Additional Column
+            $table->string('views')->nullable();
+            $table->string('likes')->nullable();
             $table->timestamps();
         });
     }

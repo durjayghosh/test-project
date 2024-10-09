@@ -36,7 +36,15 @@ class CustomLinkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'url'=>'required',
+            'status'=>'required',
+            'position'=>'required',
+        ]);
+        $data = $request->all();
+        CustomLink::create($data);
+        return redirect()->route('admin.custom-link.index')->with('success','Custom Link Created Successfully');
     }
 
     /**
@@ -58,7 +66,8 @@ class CustomLinkController extends Controller
      */
     public function edit($id)
     {
-        //
+        $customLink = CustomLink::find($id);
+        return view('admin.custom_link.edit',compact('customLink'));
     }
 
     /**
@@ -70,7 +79,17 @@ class CustomLinkController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'url'=>'required',
+            'status'=>'required',
+            'position'=>'required',
+        ]);
+        $data = $request->all();
+        $link = CustomLink::find($id);
+        $link->update($data);
+
+        return redirect()->route('admin.custom-link.index')->with('success','Custom Link Updated Successfully');
     }
 
     /**
@@ -81,6 +100,8 @@ class CustomLinkController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $link = CustomLink::find($id);
+        $link->delete();
+        return redirect()->route('admin.custom-link.index')->with('success','Custom Link Deleted Successfully');
     }
 }

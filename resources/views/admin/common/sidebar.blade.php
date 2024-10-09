@@ -113,6 +113,7 @@
                     <ul aria-expanded="false">
                         <li><a href="{{route('admin.blog-category.index')}}">Category</a></li>
                         <li><a href="{{route('admin.blogs.index')}}">Blog</a></li>
+                        <li><a href="{{route('admin.custom-link.index')}}">Custom Links</a></li>
 
                     </ul>
                 </li>
